@@ -6,7 +6,7 @@ function getData() {
         console.log(fetch_url);
         fetch(fetch_url, {"mode" : "cors"})
         .then((response) => {return response.json()})
-        .then((data) => {return data}).catch((err) => console.error("Caught error: " + err));
+        .then((data) => {populateDisplay(data)}).catch((err) => console.error("Caught error: " + err));
     }
     const getCurrent = function () {
 
@@ -14,9 +14,12 @@ function getData() {
     const getForecast = function () {
 
     };
+    function populateDisplay(data) {
+        console.log(data);
+    }
     let data; 
     callApi("current", "london");
-    
+
 }
 
 export {getData};
