@@ -1,5 +1,4 @@
 function getData() {
-    let weatherData, gifData;
     let WEATHER_API_KEY = "98027771108a4e34ae895533232506";
     let GIPHY_API_KEY = "S1oe8Qn3VykKvfxVnEATGF24DHPFOaxk";
     let weatherBase = "http://api.weatherapi.com/v1/";
@@ -16,15 +15,7 @@ function getData() {
         return fetch(fetch_url, {mode : "cors"})
         .then((response) => {return response.json()});
     }
-    function setWeatherData(data) {
-        console.log(data);
-        weatherData = data;
-    }
-    function setGifData(data) {
-        console.log(data);
-        gifData = data;
-    }
-    return {callWeatherAPI, callGiphyAPI, weatherData, gifData};
+    return {callWeatherAPI, callGiphyAPI};
 }
 
 export {getData};
