@@ -26,7 +26,7 @@ function getData() {
         console.log(data);
         gifData = data;
     }
-    return {weatherData, gifData};
+    return {callWeatherAPI, callGiphyAPI, weatherData, gifData};
 }
 
 export {getData};
