@@ -7,16 +7,14 @@ function getData() {
     const callWeatherAPI = function (qType, qParam) {
         let fetch_url = `${weatherBase}${qType}.json?key=${WEATHER_API_KEY}&q=${qParam}`;
         console.log(fetch_url);
-        fetch(fetch_url, {mode : "cors"})
-        .then((response) => {return response.json()})
-        .then((data) => {setWeatherData(data)}).catch((err) => console.error("Caught error: " + err));
+        return fetch(fetch_url, {mode : "cors"})
+        .then((response) => {return response.json()});
     }
     const callGiphyAPI = function (qType, qParam) {
-        let fetch_url = `${giphyBase}${qType}?api_key=${GIPHY_API_KEY}&q=${qParam}`;
+        let fetch_url = `${giphyBase}${qType}?api_key=${GIPHY_API_KEY}&tag=${qParam}`;
         console.log(fetch_url);
-        fetch(fetch_url, {mode : "cors"})
-        .then((response) => {return response.json()})
-        .then((data) => {setGifData(data)}).catch((err) => console.error("Caught error: " + err));
+        return fetch(fetch_url, {mode : "cors"})
+        .then((response) => {return response.json()});
     }
     function setWeatherData(data) {
         console.log(data);
