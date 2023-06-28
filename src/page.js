@@ -19,6 +19,7 @@ function populatePage() {
     let searchBtn = document.createElement("div");
     searchBtn.classList.add("material-symbols-outlined");
     searchBtn.style.fontVariationSettings = "'FILL' 0, 'wght' 400, 'GRAD' 200, 'opsz' 48";
+    searchBtn.style.fontSize = "1.1rem";
     searchBtn.textContent = "search";
     searchDiv.appendChild(labelElem);
     searchDiv.appendChild(inputElem);
