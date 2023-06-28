@@ -1,5 +1,8 @@
 import { getData } from "./data";
 import { populatePage } from "./page";
+// import "./style.css";
+
+populatePage();
 
 let dataFetcher = getData();
 
@@ -9,4 +12,4 @@ dataFetcher.callGiphyAPI("random", "cat")
     imgElem.setAttribute("src", `${data["data"]["images"]["original"]["url"]}`);
 })
 .catch(err => alert(err));
-document.querySelector("body").appendChild(imgElem);
+// document.querySelector("body").appendChild(imgElem);
