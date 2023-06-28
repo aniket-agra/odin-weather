@@ -1,4 +1,5 @@
 import { getData } from "./data";
+import { populatePage } from "./page";
 
 let dataFetcher = getData();
 
