@@ -29,6 +29,10 @@ function populatePage() {
     searchDiv.appendChild(inputElem);
     searchDiv.appendChild(searchBtn);
     bodyElem.appendChild(searchDiv);
+
+    let weatherDiv = document.createElement("div");
+    weatherDiv.classList.add("weatherText");
+    bodyElem.appendChild(weatherDiv);
 }
 
 export {populatePage}
