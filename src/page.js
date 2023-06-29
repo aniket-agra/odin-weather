@@ -16,6 +16,9 @@ function populatePage() {
     let inputAttr = {"type" : "text", "name" : "location", "id" : "location", "value" : "london"};
     for(let key in inputAttr)
         inputElem.setAttribute(key, inputAttr[key]);
+    inputElem.addEventListener("change", function (e) {
+        inputElem.setAttribute("value", e.target.value);        
+    });
     let searchBtn = document.createElement("div");
     searchBtn.classList.add("material-symbols-outlined");
     searchBtn.style.fontVariationSettings = "'FILL' 0, 'wght' 400, 'GRAD' 200, 'opsz' 48";
