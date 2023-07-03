@@ -14,7 +14,6 @@ searchBtn.addEventListener("click", function (e) {
     let location = document.querySelector("input#location").getAttribute("value");
     dataFetcher.callWeatherAPI("current", location)
     .then((data) => {
-        console.log(data);
         weatherCondition = data["current"]["condition"]["text"];
         let displayText = `In ${data["location"]["name"]}, it is currently ${weatherCondition}`;
         displayText += ` with a temperature of ${data["current"]["temp_c"]} degrees.\n`;
@@ -28,7 +27,6 @@ searchBtn.addEventListener("click", function (e) {
         .then((data) => {
             imgDiv.setAttribute("alt", weatherCondition);
             imgDiv.setAttribute("src", `${data["data"]["images"]["fixed_height"]["url"]}`);
-            console.log(data);
         });
     });
 });
