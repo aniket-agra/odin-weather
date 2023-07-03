@@ -36,6 +36,14 @@ function populatePage() {
         weatherDiv.classList.add("weatherText");
         bodyElem.appendChild(weatherDiv);
     }
+
+    {
+        let imgDiv = document.createElement("img");
+        imgDiv.classList.add("weatherGIF");
+        imgDiv.setAttribute("alt", "");
+        imgDiv.setAttribute("src", "");
+        bodyElem.appendChild(imgDiv);
+    }
     
 }
 
