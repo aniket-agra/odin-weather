@@ -28,6 +28,7 @@ searchBtn.addEventListener("click", function (e) {
         .then((data) => {
             imgDiv.setAttribute("alt", weatherCondition);
             imgDiv.setAttribute("src", `${data["data"]["images"]["fixed_height"]["url"]}`);
+            console.log(data);
         });
     });
 });
