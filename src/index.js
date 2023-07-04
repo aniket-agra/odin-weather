@@ -8,6 +8,8 @@ let dataFetcher = getData();
 
 let searchBtn = document.querySelector(".findBtn");
 searchBtn.addEventListener("click", function (e) {
+    let loadingDiv = document.querySelector(".loading");
+    loadingDiv.textContent = "Fetching data for your city right now...";
     let weatherDiv = document.querySelector(".weatherText");
     let imgDiv = document.querySelector(".weatherGIF");
     let weatherCondition;
@@ -15,6 +17,7 @@ searchBtn.addEventListener("click", function (e) {
     dataFetcher.callWeatherAPI("current", location)
     .then((data) => {
         weatherCondition = data["current"]["condition"]["text"];
+        loadingDiv.textContent = "";
         let displayText = `In ${data["location"]["name"]}, it is currently ${weatherCondition}`;
         displayText += ` with a temperature of ${data["current"]["temp_c"]} degrees.\n`;
         if (data["current"]["temp_c"] > 20) {
