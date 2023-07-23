@@ -1,7 +1,7 @@
 import { getData } from "./data";
 import { populatePage1 } from "./page1";
 import { populatePage2 } from "./page2";
-// import "./style.css";
+import "./style.css";
 
 populatePage1();
 
