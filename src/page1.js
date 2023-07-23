@@ -37,6 +37,12 @@ function populatePage1() {
         searchDiv.appendChild(searchBtn);
         bodyElem.appendChild(searchDiv);
     }    
+
+    {
+        let loadDiv = document.createElement("div");
+        loadDiv.classList.add("loading");
+        bodyElem.appendChild(loadDiv);
+    }
 }
 
 export {populatePage1}

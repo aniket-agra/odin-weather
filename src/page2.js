@@ -13,12 +13,6 @@ function populatePage2() {
     // }
 
     // {
-    //     let loadDiv = document.createElement("div");
-    //     loadDiv.classList.add("loading");
-    //     bodyElem.appendChild(loadDiv);
-    // }
-
-    // {
     //     let imgDiv = document.createElement("img");
     //     imgDiv.classList.add("weatherGIF");
     //     imgDiv.setAttribute("alt", "");
