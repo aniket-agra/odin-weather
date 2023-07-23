@@ -15,9 +15,14 @@ function populatePage1() {
         searchDiv.classList.add("search");
         let labelElem = document.createElement("label");
         labelElem.setAttribute("for", "location");
-        labelElem.textContent = "Enter location: "
         let inputElem = document.createElement("input");
-        let inputAttr = {"type" : "text", "name" : "location", "id" : "location", "value" : "london"};
+        let inputAttr = {
+            "type" : "text", 
+            "name" : "location", 
+            "id" : "location", 
+            "value" : "",
+            "placeholder" : "Location"
+        };
         for(let key in inputAttr)
             inputElem.setAttribute(key, inputAttr[key]);
         inputElem.addEventListener("change", function (e) {
