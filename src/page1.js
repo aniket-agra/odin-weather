@@ -6,6 +6,7 @@ function populatePage1() {
     document.querySelector("head").appendChild(iconElem);
 
     let bodyElem = document.querySelector("body");
+    bodyElem.classList.add("page1");
     document.querySelectorAll("body > *").forEach(e => bodyElem.removeChild(e));
     {
         let searchDiv = document.createElement("div");
@@ -30,28 +31,7 @@ function populatePage1() {
         searchDiv.appendChild(inputElem);
         searchDiv.appendChild(searchBtn);
         bodyElem.appendChild(searchDiv);
-    }
-    
-    {
-        let weatherDiv = document.createElement("div");
-        weatherDiv.classList.add("weatherText");
-        bodyElem.appendChild(weatherDiv);
-    }
-
-    {
-        let loadDiv = document.createElement("div");
-        loadDiv.classList.add("loading");
-        bodyElem.appendChild(loadDiv);
-    }
-
-    {
-        let imgDiv = document.createElement("img");
-        imgDiv.classList.add("weatherGIF");
-        imgDiv.setAttribute("alt", "");
-        imgDiv.setAttribute("src", "");
-        bodyElem.appendChild(imgDiv);
-    }
-    
+    }    
 }
 
 export {populatePage1}

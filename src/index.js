@@ -17,6 +17,7 @@ searchBtn.addEventListener("click", function (e) {
     let location = document.querySelector("input#location").getAttribute("value");
     dataFetcher.callWeatherAPI("current", location)
     .then((data) => {
+        console.log(data);
         weatherCondition = data["current"]["condition"]["text"];
         loadingDiv.textContent = "";
         let displayText = `In ${data["location"]["name"]}, it is currently ${weatherCondition}`;
