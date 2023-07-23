@@ -41,6 +41,8 @@ function populatePage1() {
     {
         let loadDiv = document.createElement("div");
         loadDiv.classList.add("loading");
+        loadDiv.textContent = "Fetching data for your city right now...";
+        loadDiv.style.color = "white";
         bodyElem.appendChild(loadDiv);
     }
 }

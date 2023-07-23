@@ -10,7 +10,7 @@ let dataFetcher = getData();
 let searchBtn = document.querySelector(".findBtn");
 searchBtn.addEventListener("click", function (e) {
     let loadingDiv = document.querySelector(".loading");
-    loadingDiv.textContent = "Fetching data for your city right now...";
+    loadingDiv.style.color = "black" ;
     let weatherDiv = document.querySelector(".weatherText");
     let imgDiv = document.querySelector(".weatherGIF");
     let weatherCondition;
