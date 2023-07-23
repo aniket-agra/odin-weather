@@ -3,7 +3,9 @@ function populatePage1() {
     iconElem.setAttribute("rel", "stylesheet");
     iconElem.setAttribute("href", "https://fonts.googleapis.com/" + 
     "css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
-    document.querySelector("head").appendChild(iconElem);
+    let headElem = document.querySelector("head");
+    let srcElem = document.querySelector("head > script");
+    headElem.insertBefore(iconElem, srcElem);
 
     let bodyElem = document.querySelector("body");
     bodyElem.classList.add("page1");
