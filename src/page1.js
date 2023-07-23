@@ -1,4 +1,4 @@
-function populatePage() {
+function populatePage1() {
     let iconElem = document.createElement("link");
     iconElem.setAttribute("rel", "stylesheet");
     iconElem.setAttribute("href", "https://fonts.googleapis.com/" + 
@@ -6,6 +6,7 @@ function populatePage() {
     document.querySelector("head").appendChild(iconElem);
 
     let bodyElem = document.querySelector("body");
+    document.querySelectorAll("body > *").forEach(e => bodyElem.removeChild(e));
     {
         let searchDiv = document.createElement("div");
         searchDiv.classList.add("search");
@@ -53,4 +54,4 @@ function populatePage() {
     
 }
 
-export {populatePage}
+export {populatePage1}
