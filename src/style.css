@@ -5,3 +5,10 @@
   'GRAD' 200,
   'opsz' 48
 }
+
+body.page1 {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
