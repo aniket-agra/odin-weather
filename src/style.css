@@ -9,13 +9,14 @@
 body.page1 {
   height: 90vh;
   display: grid;
+  row-gap: 1rem;
   justify-content: center;
   align-items: center;
 }
 
 div.search {
   display: flex;
-  align-items: center;
+  align-self: end;
 }
 
 input#location {
@@ -25,4 +26,8 @@ input#location {
 button.findBtn {
   /* this size is tuned to input field size */
   font-size: 1.37rem;
+}
+
+.loading {
+  align-self: start;
 }
