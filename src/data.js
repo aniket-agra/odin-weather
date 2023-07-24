@@ -3,7 +3,7 @@ function getData() {
     let GIPHY_API_KEY = "S1oe8Qn3VykKvfxVnEATGF24DHPFOaxk";
     const callWeatherAPI = function (qType, qParam) {
         let weatherBase = "https://api.weatherapi.com/v1/";
-        let fetch_url = `${weatherBase}${qType}.json?key=${WEATHER_API_KEY}&q=${qParam}`;
+        let fetch_url = `${weatherBase}${qType}.json?key=${WEATHER_API_KEY}&q=${qParam}&aqi=yes`;
         console.log(fetch_url);
         return fetch(fetch_url, {mode : "cors"})
         .then((response) => {return response.json()});

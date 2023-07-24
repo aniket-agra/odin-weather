@@ -23,6 +23,7 @@ searchBtn.addEventListener("click", function (e) {
         let humidDiv = document.querySelector(".humidity > .value");
         humidDiv.textContent = `${data["current"]["humidity"]}%`;
         let aqiDiv = document.querySelector(".aqi");
+        aqiDiv.textContent = `PM2.5 ${data["current"]["air_quality"]["pm2_5"].toFixed(2)}`;
         // weatherDiv.textContent += displayText;
     })
     .then(() => {
@@ -32,7 +33,7 @@ searchBtn.addEventListener("click", function (e) {
             imgDiv.setAttribute("alt", weatherCondition);
             imgDiv.setAttribute("src", `${data["data"]["images"]["fixed_height"]["url"]}`);
         });
-    });
+    })
 });
 
 // let imgElem = document.createElement("img");
