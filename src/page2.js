@@ -3,8 +3,8 @@ function populatePage2() {
     bodyElem.classList.add("page2");
     document.querySelectorAll("body > *").forEach(e => bodyElem.removeChild(e));
 
-    let container = document.createElement("div");
-    container.classList.add("container");
+    // let container = document.createElement("div");
+    // container.classList.add("container");
 
     // {
     //     let weatherDiv = document.createElement("div");
