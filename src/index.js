@@ -17,14 +17,7 @@ searchBtn.addEventListener("click", function (e) {
     .then((data) => {
         populatePage2();
         console.log(data);
-        let weatherDiv = document.querySelector(".weatherInfo");
-        weatherCondition = data["current"]["condition"]["text"];
-        loadingDiv.textContent = "";
-        let displayText = `In ${data["location"]["name"]}, it is currently ${weatherCondition}`;
-        displayText += ` with a temperature of ${data["current"]["temp_c"]} degrees.\n`;
-        if (data["current"]["temp_c"] > 20) {
-            displayText += "Finally! No jackets!!!";
-        }
+        loadingDiv.style.color = "white";
         // weatherDiv.textContent += displayText;
     })
     .then(() => {
