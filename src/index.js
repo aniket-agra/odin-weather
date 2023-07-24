@@ -25,7 +25,7 @@ searchBtn.addEventListener("click", function (e) {
         if (data["current"]["temp_c"] > 20) {
             displayText += "Finally! No jackets!!!";
         }
-        weatherDiv.textContent = displayText;
+        // weatherDiv.textContent += displayText;
     })
     .then(() => {
         dataFetcher.callGiphyAPI("random", weatherCondition.split(" ").join("+"))

@@ -9,13 +9,27 @@ function populatePage2() {
     {
         let weatherDiv = document.createElement("div");
         weatherDiv.classList.add("weatherInfo");
+        {
+            let imgDiv = document.createElement("img");
+            imgDiv.classList.add("weatherGIF");
+            weatherDiv.appendChild(imgDiv);
+        }
+        {
+            let tempDiv = document.createElement("div");
+            tempDiv.classList.add("temp");
+            weatherDiv.appendChild(tempDiv);
+        }
+        {
+            let humidDiv = document.createElement("div");
+            humidDiv.classList.add("humidity");
+            weatherDiv.appendChild(humidDiv);
+        }
+        {
+            let aqiDiv = document.createElement("div");
+            aqiDiv.classList.add("aqi");
+            weatherDiv.appendChild(aqiDiv);
+        }
         bodyElem.appendChild(weatherDiv);
-    }
-
-    {
-        let imgDiv = document.createElement("img");
-        imgDiv.classList.add("weatherGIF");
-        bodyElem.appendChild(imgDiv);
     }
 
     {
