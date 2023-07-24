@@ -23,6 +23,17 @@ function populatePage2() {
         {
             let humidDiv = document.createElement("div");
             humidDiv.classList.add("humidity");
+            {
+                let dropDiv = document.createElement("div");
+                dropDiv.classList.add("drop", "material-symbols-outlined");
+                dropDiv.textContent = "water_drop";
+                humidDiv.appendChild(dropDiv);
+            }
+            {
+                let valueDiv = document.createElement("div");
+                valueDiv.classList.add("value");
+                humidDiv.appendChild(valueDiv);
+            }
             weatherDiv.appendChild(humidDiv);
         }
         {
