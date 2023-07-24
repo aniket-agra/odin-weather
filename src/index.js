@@ -11,13 +11,13 @@ let searchBtn = document.querySelector(".findBtn");
 searchBtn.addEventListener("click", function (e) {
     let loadingDiv = document.querySelector(".loading");
     loadingDiv.style.color = "black" ;
-    let weatherDiv = document.querySelector(".weatherInfo");
-    let imgDiv = document.querySelector(".weatherGIF");
     let weatherCondition;
     let location = document.querySelector("input#location").getAttribute("value");
     dataFetcher.callWeatherAPI("current", location)
     .then((data) => {
+        populatePage2();
         console.log(data);
+        let weatherDiv = document.querySelector(".weatherInfo");
         weatherCondition = data["current"]["condition"]["text"];
         loadingDiv.textContent = "";
         let displayText = `In ${data["location"]["name"]}, it is currently ${weatherCondition}`;
@@ -30,6 +30,7 @@ searchBtn.addEventListener("click", function (e) {
     .then(() => {
         dataFetcher.callGiphyAPI("random", weatherCondition.split(" ").join("+"))
         .then((data) => {
+            let imgDiv = document.querySelector(".weatherGIF");
             imgDiv.setAttribute("alt", weatherCondition);
             imgDiv.setAttribute("src", `${data["data"]["images"]["fixed_height"]["url"]}`);
         });
