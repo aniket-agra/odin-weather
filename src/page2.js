@@ -1,5 +1,6 @@
 function populatePage2() {
     let bodyElem = document.querySelector("body");
+    bodyElem.classList.remove("page1");
     bodyElem.classList.add("page2");
     document.querySelectorAll("body > *").forEach(e => bodyElem.removeChild(e));
 

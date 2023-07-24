@@ -8,6 +8,7 @@ function populatePage1() {
     headElem.insertBefore(iconElem, srcElem);
 
     let bodyElem = document.querySelector("body");
+    bodyElem.classList.remove("page2");
     bodyElem.classList.add("page1");
     document.querySelectorAll("body > *").forEach(e => bodyElem.removeChild(e));
     {
