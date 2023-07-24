@@ -24,7 +24,7 @@ searchBtn.addEventListener("click", function (e) {
         humidDiv.textContent = `${data["current"]["humidity"]}%`;
         let aqiDiv = document.querySelector(".aqi");
         aqiDiv.textContent = `PM2.5 ${data["current"]["air_quality"]["pm2_5"].toFixed(2)}`;
-        // weatherDiv.textContent += displayText;
+        weatherCondition = `${data["current"]["condition"]["text"]}`;
     })
     .then(() => {
         dataFetcher.callGiphyAPI("random", weatherCondition.split(" ").join("+"))
