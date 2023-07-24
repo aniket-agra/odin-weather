@@ -18,6 +18,10 @@ searchBtn.addEventListener("click", function (e) {
         populatePage2();
         console.log(data);
         loadingDiv.style.color = "white";
+        let tempDiv = document.querySelector(".temp");
+        tempDiv.textContent = `${data["current"]["temp_c"]}\u00B0C`;
+        let humidDiv = document.querySelector(".humid");
+        let aqiDiv = document.querySelector(".aqi");
         // weatherDiv.textContent += displayText;
     })
     .then(() => {
