@@ -11,7 +11,7 @@ let searchBtn = document.querySelector(".findBtn");
 searchBtn.addEventListener("click", function (e) {
     let loadingDiv = document.querySelector(".loading");
     loadingDiv.style.color = "black" ;
-    let weatherDiv = document.querySelector(".weatherText");
+    let weatherDiv = document.querySelector(".weatherInfo");
     let imgDiv = document.querySelector(".weatherGIF");
     let weatherCondition;
     let location = document.querySelector("input#location").getAttribute("value");

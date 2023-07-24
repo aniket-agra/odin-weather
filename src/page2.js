@@ -6,19 +6,23 @@ function populatePage2() {
     // let container = document.createElement("div");
     // container.classList.add("container");
 
-    // {
-    //     let weatherDiv = document.createElement("div");
-    //     weatherDiv.classList.add("weatherText");
-    //     bodyElem.appendChild(weatherDiv);
-    // }
+    {
+        let weatherDiv = document.createElement("div");
+        weatherDiv.classList.add("weatherInfo");
+        bodyElem.appendChild(weatherDiv);
+    }
 
-    // {
-    //     let imgDiv = document.createElement("img");
-    //     imgDiv.classList.add("weatherGIF");
-    //     imgDiv.setAttribute("alt", "");
-    //     imgDiv.setAttribute("src", "");
-    //     bodyElem.appendChild(imgDiv);
-    // }
+    {
+        let imgDiv = document.createElement("img");
+        imgDiv.classList.add("weatherGIF");
+        bodyElem.appendChild(imgDiv);
+    }
+
+    {
+        let historyDiv = document.createElement("div");
+        historyDiv.classList.add("history");
+        bodyElem.appendChild(historyDiv);
+    }
 
 }
 
