@@ -32,6 +32,11 @@ button.findBtn {
   align-self: start;
 }
 
+body.page2 {
+  display: grid;
+  row-gap: 1rem;
+}
+
 .weatherInfo {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -39,6 +44,9 @@ button.findBtn {
   align-items: center;
   column-gap: 1rem;
   row-gap: 1rem;
+  border-radius: 8px;
+  border: 2px solid black;
+  justify-self: center;
 }
 
 .weatherGIF {
