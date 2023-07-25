@@ -16,35 +16,40 @@ function populatePage2() {
             weatherDiv.appendChild(imgDiv);
         }
         {
-            let tempDiv = document.createElement("div");
-            tempDiv.classList.add("temp");
-            weatherDiv.appendChild(tempDiv);
-        }
-        {
-            let textDiv = document.createElement("div");
-            textDiv.classList.add("text");
-            weatherDiv.appendChild(textDiv);
-        }
-        {
-            let humidDiv = document.createElement("div");
-            humidDiv.classList.add("humidity");
+            let infoDiv = document.createElement("div");
+            infoDiv.classList.add("info");
             {
-                let dropDiv = document.createElement("div");
-                dropDiv.classList.add("drop", "material-symbols-outlined");
-                dropDiv.textContent = "water_drop";
-                humidDiv.appendChild(dropDiv);
+                let tempDiv = document.createElement("div");
+                tempDiv.classList.add("temp");
+                infoDiv.appendChild(tempDiv);
             }
             {
-                let valueDiv = document.createElement("div");
-                valueDiv.classList.add("value");
-                humidDiv.appendChild(valueDiv);
+                let textDiv = document.createElement("div");
+                textDiv.classList.add("text");
+                infoDiv.appendChild(textDiv);
             }
-            weatherDiv.appendChild(humidDiv);
-        }
-        {
-            let aqiDiv = document.createElement("div");
-            aqiDiv.classList.add("aqi");
-            weatherDiv.appendChild(aqiDiv);
+            {
+                let humidDiv = document.createElement("div");
+                humidDiv.classList.add("humidity");
+                {
+                    let dropDiv = document.createElement("div");
+                    dropDiv.classList.add("drop", "material-symbols-outlined");
+                    dropDiv.textContent = "water_drop";
+                    humidDiv.appendChild(dropDiv);
+                }
+                {
+                    let valueDiv = document.createElement("div");
+                    valueDiv.classList.add("value");
+                    humidDiv.appendChild(valueDiv);
+                }
+                infoDiv.appendChild(humidDiv);
+            }
+            {
+                let aqiDiv = document.createElement("div");
+                aqiDiv.classList.add("aqi");
+                infoDiv.appendChild(aqiDiv);
+            }
+            weatherDiv.appendChild(infoDiv);
         }
         bodyElem.appendChild(weatherDiv);
     }
