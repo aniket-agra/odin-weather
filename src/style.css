@@ -39,20 +39,21 @@ body.page2 {
 
 .weatherInfo {
   display: grid;
-  grid-template-columns: 7fr 2fr;
   grid-template-rows: repeat(8, 1fr);
   align-items: center;
   column-gap: 1rem;
   border-radius: 8px;
   border: 2px solid black;
   justify-self: center;
+  padding-right: 1rem;
 }
 
 .weatherGIF {
   grid-row : 1 / -1;
   grid-column: 1 / 2;
-  margin: 1rem;
-  border-radius: 4px;
+  /* same radius does not seem to fit in flush with border */
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .temp {
@@ -60,12 +61,14 @@ body.page2 {
   grid-column: 2 / 3;
   font-size: 2rem;
   align-self: end;
+  justify-self: end;
 }
 
 
 .weatherInfo > .text {
   grid-row : 4 / 5;
   grid-column: 2 / 3;
+  justify-self: end;
 }
 
 .humidity {
@@ -73,10 +76,11 @@ body.page2 {
   grid-column: 2 / 3;
   display: flex;
   align-items: center;
-  justify-self: start;
+  justify-self: end;
 }
 
 .aqi {
   grid-row: 6 / 7;
   grid-column: 2 / 3;
+  justify-self: end;
 }
