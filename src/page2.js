@@ -21,6 +21,11 @@ function populatePage2() {
             weatherDiv.appendChild(tempDiv);
         }
         {
+            let textDiv = document.createElement("div");
+            textDiv.classList.add("text");
+            weatherDiv.appendChild(textDiv);
+        }
+        {
             let humidDiv = document.createElement("div");
             humidDiv.classList.add("humidity");
             {

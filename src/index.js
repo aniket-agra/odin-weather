@@ -20,6 +20,8 @@ searchBtn.addEventListener("click", function (e) {
         loadingDiv.style.color = "white";
         let tempDiv = document.querySelector(".temp");
         tempDiv.textContent = `${data["current"]["temp_c"]}\u00B0C`;
+        let textDiv = document.querySelector(".weatherInfo > .text");
+        textDiv.textContent = `${data["current"]["condition"]["text"]}`;
         let humidDiv = document.querySelector(".humidity > .value");
         humidDiv.textContent = `${data["current"]["humidity"]}%`;
         let aqiDiv = document.querySelector(".aqi");
