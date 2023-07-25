@@ -24,9 +24,14 @@ searchBtn.addEventListener("click", function (e) {
         textDiv.textContent = "Partly cloudy";//`${data["current"]["condition"]["text"]}`;
         let humidDiv = document.querySelector(".humidity > .value");
         humidDiv.textContent = "50%";//`${data["current"]["humidity"]}%`;
-        let aqiDiv = document.querySelector(".aqi");
-        aqiDiv.textContent = "PM2.5 100";//`PM2.5 ${data["current"]["air_quality"]["pm2_5"].toFixed(2)}`;
         // weatherCondition = `${data["current"]["condition"]["text"]}`;
+    })
+    .then(() => {
+        dataFetcher.callAqiAPI(location)
+        .then((data) => {
+            let aqiDiv = document.querySelector(".aqi");
+            aqiDiv.textContent = `AQI: ${data["data"]["aqi"]}`;
+        });
     })
     .then(() => {
         dataFetcher.callGiphyAPI("random", "cloudy") //weatherCondition.split(" ").join("+") - for testing

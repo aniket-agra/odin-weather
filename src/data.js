@@ -1,6 +1,7 @@
 function getData() {
     let WEATHER_API_KEY = "98027771108a4e34ae895533232506";
     let GIPHY_API_KEY = "S1oe8Qn3VykKvfxVnEATGF24DHPFOaxk";
+    let AQICN_API_KEY = "b948e0531f21bfdc57f17b820550ec7a01c14f4b";
     const callWeatherAPI = function (qType, qParam) {
         let weatherBase = "https://api.weatherapi.com/v1/";
         let fetch_url = `${weatherBase}${qType}.json?key=${WEATHER_API_KEY}&q=${qParam}&aqi=yes`;
@@ -15,7 +16,15 @@ function getData() {
         return fetch(fetch_url, {mode : "cors"})
         .then((response) => {return response.json()});
     }
-    return {callWeatherAPI, callGiphyAPI};
+    const callAqiAPI = async function (qParam) {
+        let base = "https://api.waqi.info/feed/";
+        let fetch_url = base + `${qParam}?token=${AQICN_API_KEY}`;
+        let response = await fetch(fetch_url, {mode: "cors"});
+        let data = await response.json();
+        return data;
+    }
+
+    return {callWeatherAPI, callGiphyAPI, callAqiAPI};
 }
 
 export {getData};
