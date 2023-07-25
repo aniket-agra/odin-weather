@@ -19,18 +19,19 @@ searchBtn.addEventListener("click", function (e) {
         console.log(data);
         loadingDiv.style.color = "white";
         let tempDiv = document.querySelector(".temp");
-        tempDiv.textContent = `${data["current"]["temp_c"]}\u00B0C`;
+        tempDiv.textContent = `16\u00B0C`; //${data["current"]["temp_c"]} 
         let textDiv = document.querySelector(".weatherInfo > .text");
-        textDiv.textContent = `${data["current"]["condition"]["text"]}`;
+        textDiv.textContent = "Partly cloudy";//`${data["current"]["condition"]["text"]}`;
         let humidDiv = document.querySelector(".humidity > .value");
-        humidDiv.textContent = `${data["current"]["humidity"]}%`;
+        humidDiv.textContent = "50%";//`${data["current"]["humidity"]}%`;
         let aqiDiv = document.querySelector(".aqi");
-        aqiDiv.textContent = `PM2.5 ${data["current"]["air_quality"]["pm2_5"].toFixed(2)}`;
-        weatherCondition = `${data["current"]["condition"]["text"]}`;
+        aqiDiv.textContent = "PM2.5 100";//`PM2.5 ${data["current"]["air_quality"]["pm2_5"].toFixed(2)}`;
+        // weatherCondition = `${data["current"]["condition"]["text"]}`;
     })
     .then(() => {
-        dataFetcher.callGiphyAPI("random", weatherCondition.split(" ").join("+"))
+        dataFetcher.callGiphyAPI("random", "cloudy") //weatherCondition.split(" ").join("+") - for testing
         .then((data) => {
+            console.log(data);
             let imgDiv = document.querySelector(".weatherGIF");
             imgDiv.setAttribute("alt", weatherCondition);
             imgDiv.setAttribute("src", `${data["data"]["images"]["fixed_height"]["url"]}`);
