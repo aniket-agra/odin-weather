@@ -34,8 +34,8 @@ button.findBtn {
 
 .weatherInfo {
   display: grid;
-  grid-template-columns: 2fr, 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
   column-gap: 1rem;
@@ -52,8 +52,14 @@ button.findBtn {
   grid-column: 2 / 3;
 }
 
-.humidity {
+
+.weatherInfo > .text {
   grid-row : 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.humidity {
+  grid-row : 3 / 4;
   grid-column: 2 / 3;
   display: flex;
   align-items: center;
@@ -61,6 +67,6 @@ button.findBtn {
 }
 
 .aqi {
-  grid-row: 3 / 4;
+  grid-row: 4 / 5;
   grid-column: 2 / 3;
 }
