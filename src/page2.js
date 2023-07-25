@@ -16,40 +16,35 @@ function populatePage2() {
             weatherDiv.appendChild(imgDiv);
         }
         {
-            let infoDiv = document.createElement("div");
-            infoDiv.classList.add("info");
+            let tempDiv = document.createElement("div");
+            tempDiv.classList.add("temp");
+            weatherDiv.appendChild(tempDiv);
+        }
+        {
+            let textDiv = document.createElement("div");
+            textDiv.classList.add("text");
+            weatherDiv.appendChild(textDiv);
+        }
+        {
+            let humidDiv = document.createElement("div");
+            humidDiv.classList.add("humidity");
             {
-                let tempDiv = document.createElement("div");
-                tempDiv.classList.add("temp");
-                infoDiv.appendChild(tempDiv);
+                let dropDiv = document.createElement("div");
+                dropDiv.classList.add("drop", "material-symbols-outlined");
+                dropDiv.textContent = "water_drop";
+                humidDiv.appendChild(dropDiv);
             }
             {
-                let textDiv = document.createElement("div");
-                textDiv.classList.add("text");
-                infoDiv.appendChild(textDiv);
+                let valueDiv = document.createElement("div");
+                valueDiv.classList.add("value");
+                humidDiv.appendChild(valueDiv);
             }
-            {
-                let humidDiv = document.createElement("div");
-                humidDiv.classList.add("humidity");
-                {
-                    let dropDiv = document.createElement("div");
-                    dropDiv.classList.add("drop", "material-symbols-outlined");
-                    dropDiv.textContent = "water_drop";
-                    humidDiv.appendChild(dropDiv);
-                }
-                {
-                    let valueDiv = document.createElement("div");
-                    valueDiv.classList.add("value");
-                    humidDiv.appendChild(valueDiv);
-                }
-                infoDiv.appendChild(humidDiv);
-            }
-            {
-                let aqiDiv = document.createElement("div");
-                aqiDiv.classList.add("aqi");
-                infoDiv.appendChild(aqiDiv);
-            }
-            weatherDiv.appendChild(infoDiv);
+            weatherDiv.appendChild(humidDiv);
+        }
+        {
+            let aqiDiv = document.createElement("div");
+            aqiDiv.classList.add("aqi");
+            weatherDiv.appendChild(aqiDiv);
         }
         bodyElem.appendChild(weatherDiv);
     }
