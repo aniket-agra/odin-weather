@@ -50,9 +50,9 @@ function populatePage2() {
     }
 
     {
-        let historyDiv = document.createElement("div");
-        historyDiv.classList.add("history");
-        bodyElem.appendChild(historyDiv);
+        let stuffDiv = document.createElement("div");
+        stuffDiv.classList.add("stuff");
+        bodyElem.appendChild(stuffDiv);
     }
 
 }
