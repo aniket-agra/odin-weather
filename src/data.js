@@ -31,8 +31,11 @@ function getData() {
         let data = await response.json();
         return data;
     }
-
-    return {callWeatherAPI, callGiphyAPI, callAqiAPI, callNewsAPI};
+    const callHistoryAPI = async function () {
+    }
+    const callQuotesAPI = function (qParams) {
+    }
+    return {callWeatherAPI, callGiphyAPI, callAqiAPI, callNewsAPI, callHistoryAPI, callQuotesAPI};
 }
 
 export {getData};
