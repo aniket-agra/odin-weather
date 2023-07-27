@@ -19,11 +19,11 @@ searchBtn.addEventListener("click", function (e) {
         console.log(data);
         loadingDiv.style.color = "white";
         let tempDiv = document.querySelector(".temp");
-        tempDiv.textContent = `16\u00B0C`; //${data["current"]["temp_c"]} 
+        tempDiv.textContent = `${data["current"]["temp_c"]}\u00B0C`;
         let textDiv = document.querySelector(".weatherInfo > .text");
-        textDiv.textContent = "Partly cloudy";//`${data["current"]["condition"]["text"]}`;
+        textDiv.textContent = `${data["current"]["condition"]["text"]}`;
         let humidDiv = document.querySelector(".humidity > .value");
-        humidDiv.textContent = "50%";//`${data["current"]["humidity"]}%`;
+        humidDiv.textContent = `${data["current"]["humidity"]}%`;
         let locationDiv = document.querySelector(".location > .value");
         locationDiv.textContent = `${data["location"]["name"]}, ${data["location"]["country"]}`;
     })
@@ -31,7 +31,11 @@ searchBtn.addEventListener("click", function (e) {
         dataFetcher.callAqiAPI(location)
         .then((data) => {
             let aqiDiv = document.querySelector(".aqi");
-            aqiDiv.textContent = `AQI: ${data["data"]["aqi"]}`;
+            let aqiVal = data["data"]["aqi"];
+            if (aqiVal === "-")
+                aqiDiv.textContent = `AQI: N/A`;
+            else
+                aqiDiv.textContent = `AQI: ${aqiVal}`;
         });
     })
     .then(() => {
