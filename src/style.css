@@ -36,6 +36,7 @@ body.page2 {
   display: grid;
   height: 95vh;
   align-content: space-around;
+  justify-items: center;
 }
 
 .weatherInfo {
@@ -45,7 +46,6 @@ body.page2 {
   column-gap: 1rem;
   border-radius: 8px;
   border: 2px solid black;
-  justify-self: center;
   padding-right: 1rem;
 }
 
@@ -96,7 +96,6 @@ body.page2 {
 
 fieldset {
   width: max-content;
-  justify-self: center;
   border: 2px solid black;
   border-radius: 8px;
   padding: 1rem 2rem;
