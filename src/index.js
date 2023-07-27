@@ -46,9 +46,15 @@ searchBtn.addEventListener("click", function (e) {
     .then(() => {
         dataFetcher.callNewsAPI(location)
         .then(function (data) {
+            let numResults = Math.min(10, data["data"].length);
             let newsDiv = document.querySelector(".news");
-            let numResults = Math.max(10, data["totalResults"]);
-            console.log(data);
+            for (let i = 0; i < numResults; i++) {
+                let headline = document.createElement("a");
+                headline.classList.add(`headline#${i + 1}`);
+                headline.setAttribute("href", data["data"][i]["url"]);
+                headline.textContent = data["data"][i]["title"];
+                newsDiv.appendChild(headline);
+            }
         });
     });
 });
