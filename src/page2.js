@@ -46,6 +46,22 @@ function populatePage2() {
             aqiDiv.classList.add("aqi");
             weatherDiv.appendChild(aqiDiv);
         }
+        {
+            let locationDiv = document.createElement("div");
+            locationDiv.classList.add("location");
+            {
+                let locationPin = document.createElement("div");
+                locationPin.classList.add("pin", "material-symbols-outlined");
+                locationPin.textContent = "location_on";
+                locationDiv.appendChild(locationPin);
+            }
+            {
+                let locationText = document.createElement("div");
+                locationText.classList.add("value");
+                locationDiv.appendChild(locationText);
+            }
+            weatherDiv.appendChild(locationDiv);
+        }
         bodyElem.appendChild(weatherDiv);
     }
 
