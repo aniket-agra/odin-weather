@@ -34,7 +34,8 @@ button.findBtn {
 
 body.page2 {
   display: grid;
-  row-gap: 1rem;
+  height: 95vh;
+  align-content: space-around;
 }
 
 .weatherInfo {
