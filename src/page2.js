@@ -50,9 +50,20 @@ function populatePage2() {
     }
 
     {
-        let stuffDiv = document.createElement("div");
-        stuffDiv.classList.add("stuff");
-        bodyElem.appendChild(stuffDiv);
+        let stuff = document.createElement("fieldset");
+        stuff.classList.add("stuff");
+        {
+            let newsLegend = document.createElement("legend");
+            newsLegend.classList.add("headlines");
+            newsLegend.textContent = "Top Headlines";
+            stuff.appendChild(newsLegend);
+        }
+        {
+            let newsDiv = document.createElement("div");
+            newsDiv.classList.add("news");
+            stuff.appendChild(newsDiv);
+        }
+        bodyElem.appendChild(stuff);
     }
 
 }
