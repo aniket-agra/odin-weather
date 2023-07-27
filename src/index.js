@@ -24,7 +24,8 @@ searchBtn.addEventListener("click", function (e) {
         textDiv.textContent = "Partly cloudy";//`${data["current"]["condition"]["text"]}`;
         let humidDiv = document.querySelector(".humidity > .value");
         humidDiv.textContent = "50%";//`${data["current"]["humidity"]}%`;
-        // weatherCondition = `${data["current"]["condition"]["text"]}`;
+        let locationDiv = document.querySelector(".location > .value");
+        locationDiv.textContent = `${data["location"]["name"]}, ${data["location"]["country"]}`;
     })
     .then(() => {
         dataFetcher.callAqiAPI(location)
