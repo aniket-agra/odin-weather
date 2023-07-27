@@ -27,7 +27,8 @@ function getData() {
     const callNewsAPI = async function (qParams) {
         let base = "http://api.mediastack.com/v1/news?";
         let fetch_url = base + `access_key=${NEWS_API_KEY}&keywords=${qParams}` +
-                        `&date=${new Date().toISOString().split('T')[0]}`;
+                        `&date=${new Date().toISOString().split('T')[0]}&sort=popularity`+
+                        `&languages=en`;
         let response = await fetch(fetch_url, {mode: "cors"});
         let data = await response.json();
         return data;

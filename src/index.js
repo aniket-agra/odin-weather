@@ -43,6 +43,14 @@ searchBtn.addEventListener("click", function (e) {
             imgDiv.setAttribute("src", `${data["data"]["images"]["fixed_height"]["url"]}`);
         });
     })
+    .then(() => {
+        dataFetcher.callNewsAPI(location)
+        .then(function (data) {
+            let newsDiv = document.querySelector(".news");
+            let numResults = Math.max(10, data["totalResults"]);
+            console.log(data);
+        });
+    });
 });
 
 // let imgElem = document.createElement("img");
