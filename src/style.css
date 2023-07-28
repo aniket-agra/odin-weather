@@ -10,14 +10,19 @@
 body.page1 {
   height: 90vh;
   display: grid;
+  grid-template-rows: 5fr 1fr 5fr;
   row-gap: 1rem;
-  justify-content: center;
   align-items: center;
+}
+
+.weatherman {
+  justify-self: center;
+  align-self: end;
 }
 
 div.search {
   display: flex;
-  align-self: end;
+  justify-self: center;
 }
 
 input#location {
@@ -31,6 +36,7 @@ button.findBtn {
 
 .loading {
   align-self: start;
+  justify-self: center;
 }
 
 body.page2 {
