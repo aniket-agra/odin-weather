@@ -74,6 +74,12 @@ searchBtn.addEventListener("click", function (e) {
     fillInfo();    
 });
 
+let inputElem = document.querySelector("input");
+inputElem.addEventListener("keyup", function (e) {
+    if (e.code === "Enter") {
+        fillInfo();
+    }
+});
 // let imgElem = document.createElement("img");
 // dataFetcher.callGiphyAPI("random", "cat")
 // .then((data) => {
