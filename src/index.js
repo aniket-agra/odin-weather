@@ -17,8 +17,7 @@ dataFetcher.callGiphyAPI("random", ["tag", "weatherman"])
     weatherman.appendChild(imgDiv);
 });
 
-let searchBtn = document.querySelector(".findBtn");
-searchBtn.addEventListener("click", function (e) {
+const fillInfo = function () {
     let loadingDiv = document.querySelector(".loading");
     loadingDiv.style.color = "black" ;
     let weatherCondition;
@@ -68,6 +67,11 @@ searchBtn.addEventListener("click", function (e) {
             newsDiv.appendChild(headline);
         }
     });
+}
+
+let searchBtn = document.querySelector(".findBtn");
+searchBtn.addEventListener("click", function (e) {
+    fillInfo();    
 });
 
 // let imgElem = document.createElement("img");
