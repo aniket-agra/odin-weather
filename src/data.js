@@ -10,9 +10,10 @@ function getData() {
         return fetch(fetch_url, {mode : "cors"})
         .then((response) => {return response.json()});
     }
-    const callGiphyAPI = function (qType, qParam) {
+    const callGiphyAPI = function (qType, qParams) {
         let giphyBase = "https://api.giphy.com/v1/gifs/";
-        let fetch_url = `${giphyBase}${qType}?api_key=${GIPHY_API_KEY}&tag=${qParam}`;
+        let fetch_url = `${giphyBase}${qType}?api_key=${GIPHY_API_KEY}`;
+        fetch_url = fetch_url + `&${qParams[0]}=${qParams[1]}`;
         console.log(fetch_url);
         return fetch(fetch_url, {mode : "cors"})
         .then((response) => {return response.json()});

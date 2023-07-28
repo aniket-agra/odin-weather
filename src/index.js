@@ -29,7 +29,7 @@ searchBtn.addEventListener("click", function (e) {
         locationDiv.textContent = `${data["location"]["name"]}, ${data["location"]["country"]}`;
     })
     .then(() => {
-        dataFetcher.callGiphyAPI("random", weatherCondition.split(" ").join("+")) 
+        dataFetcher.callGiphyAPI("random", ["tag", weatherCondition.split(" ").join("+")]) 
         .then((data) => {
             console.log(data);
             let imgDiv = document.querySelector(".weatherGIF");
