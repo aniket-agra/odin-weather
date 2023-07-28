@@ -7,6 +7,16 @@ populatePage1();
 
 let dataFetcher = getData();
 
+dataFetcher.callGiphyAPI("random", ["tag", "weatherman"])
+.then((data) => {
+    console.log(data);
+    let weatherman = document.querySelector(".weatherman");
+    let imgDiv = document.createElement("img");
+    imgDiv.classList.add("weathermanGIF");
+    imgDiv.setAttribute("src", `${data["data"]["images"]["fixed_height"]["url"]}`);
+    weatherman.appendChild(imgDiv);
+});
+
 let searchBtn = document.querySelector(".findBtn");
 searchBtn.addEventListener("click", function (e) {
     let loadingDiv = document.querySelector(".loading");
