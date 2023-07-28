@@ -82,6 +82,14 @@ function populatePage2() {
         bodyElem.appendChild(stuff);
     }
 
+    {
+        let noteDiv = document.createElement("div");
+        noteDiv.classList.add("note");
+        noteDiv.textContent = "PS: You may have to disable secure DNS lookup " +
+                            "in your browser to display the headlines. This" +
+                            " will be fixed soon.";
+        bodyElem.appendChild(noteDiv);
+    }
 }
 
 export {populatePage2};
