@@ -14,6 +14,9 @@ function getData() {
         let giphyBase = "https://api.giphy.com/v1/gifs/";
         let fetch_url = `${giphyBase}${qType}?api_key=${GIPHY_API_KEY}`;
         fetch_url = fetch_url + `&${qParams[0]}=${qParams[1]}`;
+        if (qType === "id") {
+            fetch_url = `${giphyBase}${qParams[0]}?api_key=${GIPHY_API_KEY}`;
+        }
         console.log(fetch_url);
         return fetch(fetch_url, {mode : "cors"})
         .then((response) => {return response.json()});
