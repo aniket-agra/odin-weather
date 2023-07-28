@@ -21,45 +21,42 @@ searchBtn.addEventListener("click", function (e) {
         let tempDiv = document.querySelector(".temp");
         tempDiv.textContent = `${data["current"]["temp_c"]}\u00B0C`;
         let textDiv = document.querySelector(".weatherInfo > .text");
-        textDiv.textContent = `${data["current"]["condition"]["text"]}`;
+        weatherCondition = data["current"]["condition"]["text"];
+        textDiv.textContent = `${weatherCondition}`;
         let humidDiv = document.querySelector(".humidity > .value");
         humidDiv.textContent = `${data["current"]["humidity"]}%`;
         let locationDiv = document.querySelector(".location > .value");
         locationDiv.textContent = `${data["location"]["name"]}, ${data["location"]["country"]}`;
     })
     .then(() => {
-        dataFetcher.callAqiAPI(location)
-        .then((data) => {
-            let aqiDiv = document.querySelector(".aqi");
-            let aqiVal = data["data"]["aqi"];
-            if (aqiVal === "-")
-                aqiDiv.textContent = `AQI: N/A`;
-            else
-                aqiDiv.textContent = `AQI: ${aqiVal}`;
-        });
-    })
-    .then(() => {
-        dataFetcher.callGiphyAPI("random", "cloudy") //weatherCondition.split(" ").join("+") - for testing
+        dataFetcher.callGiphyAPI("random", weatherCondition.split(" ").join("+")) 
         .then((data) => {
             console.log(data);
             let imgDiv = document.querySelector(".weatherGIF");
             imgDiv.setAttribute("alt", weatherCondition);
             imgDiv.setAttribute("src", `${data["data"]["images"]["fixed_height"]["url"]}`);
         });
-    })
-    .then(() => {
-        dataFetcher.callNewsAPI(location)
-        .then(function (data) {
-            let numResults = Math.min(10, data["data"].length);
-            let newsDiv = document.querySelector(".news");
-            for (let i = 0; i < numResults; i++) {
-                let headline = document.createElement("a");
-                headline.classList.add(`headline#${i + 1}`);
-                headline.setAttribute("href", data["data"][i]["url"]);
-                headline.textContent = data["data"][i]["title"];
-                newsDiv.appendChild(headline);
-            }
-        });
+    });
+    dataFetcher.callAqiAPI(location)
+    .then((data) => {
+        let aqiDiv = document.querySelector(".aqi");
+        let aqiVal = data["data"]["aqi"];
+        if (aqiVal === "-")
+            aqiDiv.textContent = `AQI: N/A`;
+        else
+            aqiDiv.textContent = `AQI: ${aqiVal}`;
+    });
+    dataFetcher.callNewsAPI(location)
+    .then(function (data) {
+        let numResults = Math.min(10, data["data"].length);
+        let newsDiv = document.querySelector(".news");
+        for (let i = 0; i < numResults; i++) {
+            let headline = document.createElement("a");
+            headline.classList.add(`headline#${i + 1}`);
+            headline.setAttribute("href", data["data"][i]["url"]);
+            headline.textContent = data["data"][i]["title"];
+            newsDiv.appendChild(headline);
+        }
     });
 });
 
