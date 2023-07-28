@@ -11,6 +11,13 @@ function populatePage1() {
     bodyElem.classList.remove("page2");
     bodyElem.classList.add("page1");
     document.querySelectorAll("body > *").forEach(e => bodyElem.removeChild(e));
+
+    {
+        let weatherMan = document.createElement("div");
+        weatherMan.classList.add("weatherman");
+        bodyElem.appendChild(weatherMan);
+    }
+
     {
         let searchDiv = document.createElement("div");
         searchDiv.classList.add("search");
